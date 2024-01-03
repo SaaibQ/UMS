@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update User Page</title>
+    <link rel="stylesheet" href="formStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>User Management System</nav>
+    </header>
+    <main style="height: 100%">
+      <div class="container">
+        <div class="form-heading">
+          <div class="back-btn">
+            <button><a href="./home.html">Back to Home</a></button>
+          </div>
+          <h2>Update User</h2>
+          <p>Use the below form to update an account</p>
+        </div>
+        <form class="form-body" action="/api/v1/users" method="post">
+          <div class="inpt-group">
+            <label for="name" class="fnt-size-md">Name</label>
+            <input
+              type="text"
+              name="user_name"
+              id="name"
+              value=""
+              placeholder="John Doe"
+            />
+          </div>
+          <div class="inpt-group">
+            <label for="email" class="fnt-size-md">Email</label>
+            <input
+              type="email"
+              name="user_email"
+              value=""
+              id="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <div class="inpt-group gender_options">
+            <label for="gender" class="fnt-size-md">Gender</label>
+            <div class="gender-group">
+              <label for="male" class="custom-radio-btn">
+                Male
+                <input type="radio" id="male" name="gender" value="Male" />
+                <span class="checkmark"></span>
+              </label>
+              <label for="female" class="custom-radio-btn">
+                Female
+                <input type="radio" id="female" name="gender" value="Female" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="inpt-group status_options">
+            <label for="status" class="fnt-size-md">Status</label>
+            <div class="status-group">
+              <label for="active" class="custom-radio-btn">
+                Active
+                <input type="radio" id="active" name="status" value="Active" />
+                <span class="checkmark"></span>
+              </label>
+              <label for="inactive" class="custom-radio-btn">
+                Inactive
+                <input
+                  type="radio"
+                  id="inactive"
+                  name="status"
+                  value="Inactive"
+                />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="submit-form-btn">Update</button>
+        </form>
+        <div class="toast">
+          <p class="toast-msg">User Added Successfully</p>
+        </div>
+      </div>
+      <script src="/updateScript.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </main>
+  </body>
+</html>
